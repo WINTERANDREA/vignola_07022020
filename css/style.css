@@ -1,0 +1,392 @@
+:root {
+  --default-size: 1.6rem;
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+  --color-secondary: #7f9f9c;
+  --color-secondary-light: rgb(97, 182, 189);
+  --color-secondary-dark: rgb(47, 85, 74);
+  --color-secondary-2: #26a69a;
+  --color-secondary-light-2: rgb(45, 204, 188);
+  --color-secondary-dark-2: rgb(33, 141, 130);
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-gold-light: #a29f7c;
+  --color-gold-dark: #f5be88;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #444;
+  --color-grey-dark-3: #777;
+  --color-grey-dark-4: #999;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --grid-width: 114rem;
+  --gutter-vertical: 8rem;
+  --gutter-vertical-small: 6rem;
+  --gutter-horizontal: 6rem;
+  --text-body: "Lato", sans-serif;
+  --text-heading: "Playfair Display", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+} /* 1rem = 10px */
+
+body {
+  font-family: var(--text-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-grey-dark-2);
+}
+
+nav ul a,
+nav .brand-logo {
+  color: var(--color-secondary-dark);
+  font-size: 1.4rem;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: var(--color-secondary);
+}
+
+.list-inline {
+  display: flex;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+@media (max-width: 900px) {
+  .u-margin-bottom-medium {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+@media (max-width: 900px) {
+  .u-margin-bottom-big {
+    margin-bottom: 5rem !important;
+  }
+}
+
+.u-margin-top-small {
+  margin-top: 4rem !important;
+}
+.u-margin-top-medium {
+  margin-top: 6rem !important;
+}
+.u-margin-top-big {
+  margin-top: 8rem !important;
+}
+.u-margin-top-huge {
+  margin-top: 10rem !important;
+}
+
+.heading-secondary {
+  font-family: var(--text-heading);
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-secondary-dark),
+    var(--color-grey-dark-2)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+}
+
+.heading-secondary-white {
+  font-family: var(--text-heading);
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(
+    to top right,
+    var(--color-secondary-light),
+    var(--color-secondary-dark)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+}
+
+.heading-tertiary {
+  font-family: var(--text-heading);
+  font-size: var(--default-size); /*  16px */
+  text-transform: uppercase;
+}
+
+.bg-dark {
+  background-color: var(--color-grey-dark-2);
+  color: var(--color-grey-light-3);
+}
+
+.bg-light {
+  background-color: var(--color-grey-light-3);
+  color: var(--color-grey-dark-2);
+}
+
+/* NAVBAR */
+
+.navbar {
+  background-color: #fff;
+}
+
+nav ul a:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-grey-light-1);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+  margin-top: 1.2rem;
+}
+
+.material-icons {
+  font-size: 3rem !important;
+}
+
+/* SHOWCASE */
+.showcase-hero {
+  height: 92vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(20, 138, 102, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("../img/salaverde.jpg");
+
+  background-size: cover;
+  background-position: bottom;
+
+  position: relative;
+}
+
+.showcase__text-box {
+  height: inherit;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.showcase-primary {
+  color: var(--color-grey-light-1);
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+.showcase-primary--main {
+  font-family: var(--text-heading);
+  display: block;
+  font-size: 6rem;
+  letter-spacing: 2rem;
+  line-height: 1.2;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.showcase-primary--sub {
+  font-family: var(--text-heading);
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 1.5rem;
+  animation: moveInRight 1s ease-out;
+  padding-top: 3rem;
+}
+
+/* HISTORY */
+#heading-history {
+  font-family: var(--text-heading);
+  background-color: var(--color-grey-light-3);
+  padding: 8rem 0 25rem 0;
+}
+
+.container-history {
+  font-family: var(--text-body);
+  display: flex;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.container-history:not(:last-child) {
+  margin-bottom: var(--gutter-vertical);
+}
+
+.history-text {
+  max-width: 35%;
+}
+
+.history-text p {
+  font-size: 1.4rem;
+}
+
+.history-img {
+  width: 100%;
+  padding-left: 6rem;
+}
+
+/* AMBIENTI */
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background-color: lightseagreen !important;
+}
+
+.tabs .tab {
+  background-color: lightcyan;
+}
+
+@media (max-width: 768px) {
+  ul.tabs {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  ul.tabs .indicator {
+    display: none;
+  }
+
+  .resizeable {
+    width: 25% !important;
+    margin: 0 auto;
+    float: none !important;
+  }
+}
+/* SERVIZI */
+#servizi-section {
+  margin-top: -10rem;
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(../img/Natale_da_Favola-68.jpg);
+  background-size: cover;
+  /*  transform: skewY(-7deg); */
+  -webkit-clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* #servizi-section > * {
+  transform: skewY(7deg);
+} */
+
+.container-servizi {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.servizi-box {
+  width: 25%;
+  text-align: center;
+}
+
+.servizi-box_list {
+  width: 85%;
+  margin: auto;
+}
+.servizi-box_list > li {
+  width: 100%;
+  margin: 1.5rem auto;
+  text-align: left;
+}
+
+.servizi-box_list > li i {
+  padding-right: 1rem;
+  font-size: 2rem;
+}
+
+.servizi-box_list > li span {
+  font-size: 1.4rem;
+}
+
+/* CONTATTI FORM */
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-secondary-light),
+    var(--color-secondary-dark)
+  );
+}
+
+.book {
+  background-image: linear-gradient(
+      70deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/esterno.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.8);
+}
+
+.book__form {
+  width: 50%;
+  padding: 6rem;
+}
+
+/* FOOTER */
+.page-footer {
+  font-family: var(--text-body);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-secondary),
+    var(--color-secondary-dark)
+  );
+}
+
+.social-icon:hover {
+  transform: scale(1.3);
+}
+
+.social-icon:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.icon-google {
+  width: 2.9rem;
+  height: 2.9rem;
+}
